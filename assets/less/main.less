@@ -1,0 +1,354 @@
+/* === IMPORTS === */
+
+@import "../css/reset.css";
+@import "font-awesome.less";
+
+/* === COLORS === */
+@font-color: #444;
+@emph:#2b96f1;
+@header:darken(@emph, 20%);
+@muted: desaturate(lighten(@emph, 8%), 30%);
+
+/* === FUNCTIONS === */
+.transition {
+	-moz-transition: ease all 300ms;
+	-webkit-transition: ease all 300ms;
+	-o-transition: ease all 300ms;
+	transition: ease all 300ms;
+}
+
+body {
+	font: 16px 'PT Sans', Helvetica, Arial, sans-serif;
+	color: @font-color;
+	background:#fff;
+}
+
+p {
+	line-height: 1.5em;
+	font-size:1em !important;
+
+	i {
+		margin-right: 8px;
+		color: #999;
+	}
+}
+
+li {
+	margin: 3px 0;
+	line-height: 1.5em;
+}
+
+a {
+	color: #777;
+	border-bottom: 1px solid #fff;
+	text-decoration: none;
+	.transition();
+}
+
+a:hover {
+	color: @font-color;
+	border-bottom:1px solid @emph;
+}
+
+
+h2 {
+	font-weight: bold;
+	font-size: 2em;
+	color: darken(@emph, 20%);
+}
+
+.no-margin-top {margin-top: 0 !important;}
+
+/* === LAYOUT === */
+header {
+	background: @header url('../img/whitey.png');
+	color: #fff;
+	padding: 2em 0 4em 0;
+	text-align: center;
+	border-bottom: 1px solid darken(@muted, 30%);
+
+	h1 {
+		font-size: 3em;
+		font-weight: bold;
+		margin: 0.5em 0;
+		text-shadow: 0 2px 3px rgba(0,0,0,.4);
+	}
+
+	h2 {
+		font-weight: 300;
+		font-size: 1.15em;
+		margin: 0.5em 0;
+		color: darken(@header, 20%);
+		text-shadow:1px 1px rgba(255,255,255,.2);
+
+		.slash {
+			font-weight: bold;
+			color: #fff;
+			text-shadow:none;
+		}
+
+		.slash:after {
+			content: '\002F\002F';
+			margin: 0 0.5em;
+			display: inline-block;
+			position: relative;
+		}
+	}
+}
+
+.centered {
+	margin: 0 auto;
+	width: 760px;
+}
+
+.profile {
+	font-family: 'Droid Serif', Georgia, serif;
+	max-width:760px; /* Chrome font boosting */
+	
+	p {
+		line-height: 1.75em;
+		width: 528px;
+	}
+
+	.desc {
+		margin-top: 3em;
+		padding-bottom:3em;
+	}
+
+	.contact {
+		float:right;
+		width: 200px;
+		margin-left: 40px;
+		border: 16px solid #fff;
+		border-bottom: 0;
+		position: relative;
+		top: -2em;
+		background: #fff;
+	}
+}
+
+.profiles {
+	list-style: none;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+
+	i {
+		color:#aaa;
+	}
+	
+	li {
+		margin-left:-3px;
+		width: 13.5em; /* avoid line breaks in chrome */
+		overflow: show;
+
+		a {
+			color: #666;
+			text-decoration: none;
+			border: none;
+
+			i {
+				margin-right: 5px;
+				color:#aaa;
+			}
+
+			span {
+				border-bottom: 1px solid #fff;
+			}
+
+			span, i {
+				.transition();
+			}
+		}
+
+		a:hover {
+			span {
+				color: #333;
+				border-bottom: 1px solid @emph;
+			}
+
+			i {
+				color: @emph;
+			}
+		}		
+	}
+}
+
+.resume {
+	margin-top:-2em;
+
+	h2 {
+		margin-top:0;
+	}
+
+	.part {
+
+		border-top: 1px solid #ddd;
+		padding: 2.5em 0 1em 0;
+
+		.part-heading {
+			width: 200px;
+			float: left;
+			margin: 0;
+		}
+
+		.desc {
+			width: 528px;
+			margin-left: 32px;
+			margin-bottom: 1em;
+			float:right;
+
+			h4 {
+				color: @muted;
+				font-size: 1.3em;
+				margin: 0;
+			}
+
+			.period {
+				float:right;
+				background: #efefef;
+				padding: 0.25em 0.5em;
+				border-radius: 3px;
+				margin: 0 0 0.5em 0.5em;
+			}
+		}
+	}
+}
+
+body > footer {
+	background: #fff url(../img/whitey.png);
+	color: #777;
+	border-top:1px solid #bbb;
+	margin-top: 3em;
+	padding: 0.75em 0;
+	text-shadow:1px 1px #eee;
+	font-weight: bold;
+
+	p {
+		margin: 0;
+	}
+
+	small {
+		font-weight: normal;
+		font-size: 0.85em;
+	}
+}
+
+/* === MOBILE === */
+
+/* === TABLET PORTRAIT === */
+@media only screen and (max-width: 800px) {
+
+	header {
+		h2 {
+			width: 600px;
+			margin: 0 auto;
+		}
+	}
+
+	.centered {
+		width: 700px;
+	}
+
+	.profile p {
+		width: 468px;
+	}
+
+	.resume {
+		.part {
+			.part-heading {
+				width: 140px;
+			}
+		}
+	}
+}
+
+/* === WHATEVER DEVICE THAT MAY BE === */
+@media only screen and (max-width: 732px) {
+	header {
+		h2 {
+			width: 480px;
+
+			.slash:after {
+				content:'\00B7';
+				margin: 0;
+			}		
+
+			.slash {
+				color: inherit;
+				text-shadow: inherit;
+			}
+		}
+	}
+
+	.centered {
+		width: auto;
+		margin: 0 1em;
+		min-width: 500px;
+	}
+
+	.resume {
+		.part {
+			.part-heading {
+				width: auto;
+				float: none;
+				margin-bottom: 1em;
+				color: #111;
+				font-size: 1.5em;
+			}
+
+			.desc {
+				float:none;
+				margin-left: 0;
+				width: auto;
+			}
+		}
+
+		ul {
+			list-style: none;
+		}
+	}
+}
+
+/* === FULLY FLUID FOR PHONES === */
+@media only screen and (max-width: 548px) {
+	header {
+		h2 {
+			width: 100%;
+			max-width: 480px;
+		}
+	}
+
+	.centered {
+		min-width: 272px;
+	}
+
+	.profile {
+		.contact {
+			float: none;
+			margin: 0 auto;
+		}
+
+		.desc {
+			margin-top: 0;
+		}
+
+		p {
+			width: auto;
+			min-width: none;
+		}
+	}
+
+	.resume {
+		.part {
+			.desc {
+				.period {
+					float:none;
+					margin: 1em 0;
+					text-align:center;
+					font-weight: bold;
+					color: lighten(@font-color, 15%);
+					text-shadow: 1px 1px #fff;
+				}
+			}
+		}
+	}
+}

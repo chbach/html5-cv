@@ -1,0 +1,123 @@
+/* reset.css by Christoph Bach. Based on normalize.css, but more strict.
+
+/*
+ * Set everything to zero. Since it destroys all default paramtetres, it gives you the cleanest base to work on.
+ */
+
+* {
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+/* ===== HTML 5 ===== */
+
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+
+audio,
+canvas,
+video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ */
+
+audio:not([controls]) {
+	display: none;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+
+[hidden] {
+	display: none;
+}
+
+
+/* ===== BASE ===== */
+
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Keeps page centred in all browsers regardless of content height
+ * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+
+html {
+	font-size: 100%; /* 1 */
+	overflow-y: scroll; /* 2 */
+	-webkit-text-size-adjust: 100%; /* 3 */
+	-ms-text-size-adjust: 100%; /* 3 */
+}
+
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: sans-serif;
+}
+
+/* ===== BASIC STYLES ===== */
+
+/* Some basic styles. Manipulate them to your preference. */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+ol,
+blockquote,
+table {
+	margin: 1em 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+
